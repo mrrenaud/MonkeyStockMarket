@@ -233,17 +233,11 @@
             <article class="content scrollable header">
                 <h1>Qui es-tu?</h1>
                 <div data-type="list" class="user-list">
-                    <ul>
+                    <ul data-bind="foreach: users">
                         <li>
-                            <a class="btn-user" id="fbayart" href="#">
-                                <img src="https://pbs.twimg.com/profile_images/3226517613/4d478b06421b8834b43469f53b4a4faf.jpeg">
-                                <p>François Bayart</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="btn-user" id="fstephany" href="#">
-                                <img src="https://pbs.twimg.com/profile_images/2394900041/srbm5g55iiiwhf9fuz1c.jpeg">
-                                <p>François Stéphany</p>
+                            <a class="btn-user" href="#" data-bind="id: id">
+                                <img data-bind="attr: {'src': picture}"/>
+                                <p data-bind="text: name"></p>
                             </a>
                         </li>
                     </ul>

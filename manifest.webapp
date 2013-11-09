@@ -1,5 +1,6 @@
 {
   "name": "Monkey Stock Market ",
+  "type": "privileged",
   "description": "Application to follow the drinks & foods stocks in coworking space! Eat Bananas!!!",
   "launch_path": "/index.html",
   "icons": {
@@ -10,5 +11,10 @@
     "url": "http://www.creativemonkeys.eu"
   },
   "default_locale": "en",
-  "origin": "app://monkeymarket.com"
+  "origin": "app://monkeymarket.com",
+  "permissions": {
+    "systemXHR": {},
+    "network-http": {},
+    "network-tcp": {}
+  },
 }

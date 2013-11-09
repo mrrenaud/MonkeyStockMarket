@@ -13,7 +13,6 @@
 
 
 var MonkeyStockMarket = {
-
     viewModel: null,
 
     monkeyViewModel: function () {
@@ -25,6 +24,22 @@ var MonkeyStockMarket = {
         };
 
         __this.user = ko.observable('Anonymous');
+
+        __this.users = [
+          { id: "fbayart",
+            name: "François",
+            picture: "https://pbs.twimg.com/profile_images/3226517613/4d478b06421b8834b43469f53b4a4faf.jpeg" },
+          { id: "rdumont",
+            name: "Renaud",
+            picture: "https://pbs.twimg.com/profile_images/378800000105546181/296cb3ed88f5c13d33ccbb9ffde1eb8c.png" },
+          { id: "fbayart",
+            name: "François[0]",
+            picture: "https://pbs.twimg.com/profile_images/2394900041/srbm5g55iiiwhf9fuz1c.jpeg" },
+          { id: "ksyska",
+            name: "Kristopher",
+            picture: "https://abs.twimg.com/sticky/default_profile_images/default_profile_6_bigger.png" },
+        ];
+
         __this.categories = [
             { title: "Boisson",
               items: [
@@ -35,8 +50,6 @@ var MonkeyStockMarket = {
                 {label: "Kinder", price: 0.52},
                 {label: "Mousse au chocolat", price: 0.52},
                 {label: "Magnum", price: 0.52}]}];
-
-
     },
 
     initializeViewModel: function () {
@@ -60,14 +73,24 @@ var MonkeyStockMarket = {
         $("button.confirm-confirmation").on('click', function() {
           console.log("T'es gros");
           $('#confirm-dialog').attr('class', 'fade-out');
-        })
+        });
 
         $("button.cancel-confirmation").on('click', function() {
           $('#confirm-dialog').attr('class', 'fade-out');
-        })
+        });
     }
 };
 
 MonkeyStockMarket.initializeNavigation();
 MonkeyStockMarket.initializeViewModel();
 ko.applyBindings(MonkeyStockMarket.viewModel);
+
+$.ajaxSetup( {
+    xhr: function() {return new window.XMLHttpRequest({mozSystem: true});}
+});
+
+var successCallback = function(data) {
+  console.log(data);
+}
+
+$.getJSON("http://monkeystockmarket.azurewebsites.net/api/item", successCallback).fail(function(){ console.log("fail !")});
