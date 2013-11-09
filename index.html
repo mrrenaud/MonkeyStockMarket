@@ -249,8 +249,11 @@
         <header data-bind="text: title"></header>
         <ul data-bind="foreach: items">
           <li data-bind="click: $root.askConfirmation">
-            <p data-bind="text: label"></p>
-            <p data-bind="text: price"></p>
+            <a href="#">
+              <p data-bind="text: label"></p>
+              <p data-bind="text: price"></p>
+            </a>
+          </li>
         </ul>
       </div>
 
