@@ -20,6 +20,9 @@ var MonkeyStockMarket = {
 
         var __this = this;
 
+        __this.taMere = function(clickedItem) {
+          alert(clickedItem.label);
+        };
         __this.user = ko.observable('Anonymous');
         __this.categories = [
             { title: "Boisson",
@@ -31,6 +34,8 @@ var MonkeyStockMarket = {
                 {label: "Kinder", price: 0.52},
                 {label: "Mousse au chocolat", price: 0.52},
                 {label: "Magnum", price: 0.52}]}];
+
+
     },
 
     initializeViewModel: function () {
@@ -44,7 +49,6 @@ var MonkeyStockMarket = {
             MonkeyStockMarket.viewModel.user($(this).attr('id'));
 
         });
-
 
         $(".btn-back").on('click', function () {
             $('section.current').attr('class', 'right');
