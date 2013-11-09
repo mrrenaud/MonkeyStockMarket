@@ -1,0 +1,13 @@
+{
+  "name": "CreativeStockMarket",
+  "description": "bla bla bla",
+  "launch_path": "/index.html",
+  "icons": {
+    "128": "/img/icon-128.png"
+  },
+  "developer": {
+    "name": "CreativeMonkey",
+    "url": "http://your-homepage-here.org"
+  },
+  "default_locale": "en"
+}
