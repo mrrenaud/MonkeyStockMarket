@@ -20,9 +20,10 @@ var MonkeyStockMarket = {
 
         var __this = this;
 
-        __this.taMere = function(clickedItem) {
-          alert(clickedItem.label);
+        __this.askConfirmation = function(clickedItem) {
+          $('#confirm-dialog').attr('class', 'fade-in');
         };
+
         __this.user = ko.observable('Anonymous');
         __this.categories = [
             { title: "Boisson",
@@ -54,6 +55,16 @@ var MonkeyStockMarket = {
             $('section.current').attr('class', 'right');
             $('[data-position="current"]').attr('class', 'current');
         });
+
+
+        $("button.confirm-confirmation").on('click', function() {
+          console.log("T'es gros");
+          $('#confirm-dialog').attr('class', 'fade-out');
+        })
+
+        $("button.cancel-confirmation").on('click', function() {
+          $('#confirm-dialog').attr('class', 'fade-out');
+        })
     }
 };
 
