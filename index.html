@@ -225,7 +225,7 @@
                     <ul data-bind="foreach: users">
                         <li>
                             <a class="btn-user" href="#" data-bind="click: $root.showUser, attr: {'id': userid}">
-                                <img data-bind="attr: {'src': picture}"/>
+                                <img data-bind="attr: {'src': picture}" />
                                 <p data-bind="text: name"></p>
                             </a>
                         </li>
@@ -234,42 +234,41 @@
             </article>
         </section> <!-- end drawer -->
     </section> <!-- end index -->
-
     <!--···························· Monkey Miam ····························-->
-  <section role="region" id="miam-selection" data-position="right">
-    <header class="fixed">
-      <a  class="btn-back" href="#"><span class="icon icon-back">retour</span></a>
-      <h1>Hello, <span data-bind="text: user"></span></h1>
-    </header>
+    <section role="region" id="miam-selection" data-position="right">
+        <header class="fixed">
+            <a class="btn-back" href="#"><span class="icon icon-back">retour</span></a>
+            <h1>Hello, <span data-bind="text: username"></span></h1>
+        </header>
 
-    <article class="content scrollable header">
-      <section data-type="list">
+        <article class="content scrollable header">
+            <section data-type="list">
 
-      <div data-bind="foreach: categories">
-        <header data-bind="text: title"></header>
-        <ul data-bind="foreach: items">
-          <li data-bind="click: $root.askConfirmation">
-            <p data-bind="text: label"></p>
-            <p data-bind="text: price"></p>
-        </ul>
-      </div>
+                <div data-bind="foreach: categories">
+                    <header data-bind="text: title"></header>
+                    <ul data-bind="foreach: items">
+                        <li data-bind="click: $root.askConfirmation">
+                            <p data-bind="text: label"></p>
+                            <p data-bind="text: price"></p>
+                    </ul>
+                </div>
 
-      </section>
-    </article>
-  </section>
+            </section>
+        </article>
+    </section>
 
-  <section id="confirm-dialog" data-position="back" class="fullscreen">
-    <form role="dialog" data-type="confirm">
-      <section>
-        <h1>Confirmation</h1><!-- this heading is optional -->
-        <p>T'as vraiment mangé ça ?</p>
-      </section>
-      <menu>
-        <button class="cancel-confirmation">Nan</button>
-        <button class="recommend confirm-confirmation">Oui</button>
-      </menu>
-    </form>
-  </section>
+    <section id="confirm-dialog" data-position="back" class="fullscreen">
+        <form role="dialog" data-type="confirm">
+            <section>
+                <h1>Confirmation</h1><!-- this heading is optional -->
+                <p>T'as vraiment mangé ça ?</p>
+            </section>
+            <menu>
+                <button class="cancel-confirmation">Nan</button>
+                <button class="recommend confirm-confirmation">Oui</button>
+            </menu>
+        </form>
+    </section>
     <script type="text/javascript" defer src="js/status.js"></script>
     <script type="text/javascript" defer src="js/seekbars.js"></script>
     <script type="text/javascript" defer src="js/jquery-2.0.3.min.js"></script>

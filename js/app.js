@@ -26,10 +26,17 @@ var MonkeyStockMarket = {
         __this.showUser = function (user) {
             $('#miam-selection').attr('class', 'current');
             $('[data-position="current"]').attr('class', 'left');
-            MonkeyStockMarket.viewModel.user(user.name);
+            MonkeyStockMarket.viewModel.username(user.name);
+            MonkeyStockMarket.viewModel.user(user);
+
         }
 
-        __this.user = ko.observable('Anonymous');
+        __this.commandItem = function (item) {
+            
+        };
+
+        __this.user = ko.observable(null);
+        __this.username = ko.observable('');
 
         __this.users = ko.observableArray([]);
 
