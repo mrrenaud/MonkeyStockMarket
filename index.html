@@ -205,6 +205,12 @@
     <section id="index" data-position="current">
         <section data-type="sidebar">
             <nav>
+                <h2>Commandes</h2>
+                <ul>
+                    <li><a href="#">Retour à l'accueil</a></li>
+                    <li><a href="#">A propos</a></li>
+                    
+                </ul>
                 <h2>Le Top des gros</h2>
                 <ul>
                     <li><a href="#">Gil (43.20 €)</a></li>
@@ -224,7 +230,7 @@
                 <div data-type="list" class="user-list">
                     <ul data-bind="foreach: users">
                         <li>
-                            <a class="btn-user" href="#" data-bind="click: $root.showUser, attr: {'id': id}">
+                            <a class="btn-user" href="#" data-bind="click: $root.showUser, attr: {'id': userid}">
                                 <img data-bind="attr: {'src': picture}"/>
                                 <p data-bind="text: name"></p>
                             </a>
