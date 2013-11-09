@@ -224,7 +224,7 @@
                 <div data-type="list" class="user-list">
                     <ul data-bind="foreach: users">
                         <li>
-                            <a class="btn-user" href="#" data-bind="id: id">
+                            <a class="btn-user" href="#" data-bind="click: $root.showUser, attr: {'id': id}">
                                 <img data-bind="attr: {'src': picture}"/>
                                 <p data-bind="text: name"></p>
                             </a>
@@ -262,10 +262,10 @@
     <form role="dialog" data-type="confirm">
       <section>
         <h1>Confirmation</h1><!-- this heading is optional -->
-        <p>T'as vraiment ingurgité ça ?</p>
+        <p>T'as vraiment mangé ça ?</p>
       </section>
       <menu>
-        <button class="cancel-confirmation">Nan.</button>
+        <button class="cancel-confirmation">Nan</button>
         <button class="recommend confirm-confirmation">Oui</button>
       </menu>
     </form>

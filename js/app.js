@@ -23,6 +23,12 @@ var MonkeyStockMarket = {
           $('#confirm-dialog').attr('class', 'fade-in');
         };
 
+        __this.showUser = function(user) {
+            $('#miam-selection').attr('class', 'current');
+            $('[data-position="current"]').attr('class', 'left');
+            MonkeyStockMarket.viewModel.user(user.id);
+        }
+
         __this.user = ko.observable('Anonymous');
 
         __this.users = [
@@ -57,12 +63,6 @@ var MonkeyStockMarket = {
     },
 
     initializeNavigation: function () {
-        $(".btn-user").on('click', function () {
-            $('#miam-selection').attr('class', 'current');
-            $('[data-position="current"]').attr('class', 'left');
-            MonkeyStockMarket.viewModel.user($(this).attr('id'));
-
-        });
 
         $(".btn-back").on('click', function () {
             $('section.current').attr('class', 'right');
