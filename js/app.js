@@ -19,11 +19,11 @@ var MonkeyStockMarket = {
 
         var __this = this;
 
-        __this.askConfirmation = function(clickedItem) {
-          $('#confirm-dialog').attr('class', 'fade-in');
+        __this.askConfirmation = function (clickedItem) {
+            $('#confirm-dialog').attr('class', 'fade-in');
         };
 
-        __this.showUser = function(user) {
+        __this.showUser = function (user) {
             $('#miam-selection').attr('class', 'current');
             $('[data-position="current"]').attr('class', 'left');
             MonkeyStockMarket.viewModel.user(user.id);
@@ -31,31 +31,32 @@ var MonkeyStockMarket = {
 
         __this.user = ko.observable('Anonymous');
 
-        __this.users = [
-          { id: "fbayart",
-            name: "François",
-            picture: "https://pbs.twimg.com/profile_images/3226517613/4d478b06421b8834b43469f53b4a4faf.jpeg" },
-          { id: "rdumont",
-            name: "Renaud",
-            picture: "https://pbs.twimg.com/profile_images/378800000105546181/296cb3ed88f5c13d33ccbb9ffde1eb8c.png" },
-          { id: "fbayart",
-            name: "François[0]",
-            picture: "https://pbs.twimg.com/profile_images/2394900041/srbm5g55iiiwhf9fuz1c.jpeg" },
-          { id: "ksyska",
-            name: "Kristopher",
-            picture: "https://abs.twimg.com/sticky/default_profile_images/default_profile_6_bigger.png" },
-        ];
+        __this.users = ko.observableArray([]);
+
+        $.ajax('http://monkeystockmarket.azurewebsites.net/api/user')
+         .then(function (json) {
+             var result = JSON.parse(json);
+             result.forEach(function (item) {
+                 __this.users.push(item);
+             });
+         }, function (error) {
+             alert("error");
+         });
 
         __this.categories = [
-            { title: "Boisson",
-              items: [
-                {label: "Coca", price: 0.52},
-                {label: "Fanta", price: 0.52}]},
-            { title: "Bouffe",
-              items: [
-                {label: "Kinder", price: 0.52},
-                {label: "Mousse au chocolat", price: 0.52},
-                {label: "Magnum", price: 0.52}]}];
+            {
+                title: "Boisson",
+                items: [
+                  { label: "Coca", price: 0.52 },
+                  { label: "Fanta", price: 0.52 }]
+            },
+            {
+                title: "Bouffe",
+                items: [
+                  { label: "Kinder", price: 0.52 },
+                  { label: "Mousse au chocolat", price: 0.52 },
+                  { label: "Magnum", price: 0.52 }]
+            }];
     },
 
     initializeViewModel: function () {
@@ -69,13 +70,13 @@ var MonkeyStockMarket = {
             $('[data-position="current"]').attr('class', 'current');
         });
 
-        $("button.confirm-confirmation").on('click', function() {
-          console.log("T'es gros");
-          $('#confirm-dialog').attr('class', 'fade-out');
+        $("button.confirm-confirmation").on('click', function () {
+            console.log("T'es gros");
+            $('#confirm-dialog').attr('class', 'fade-out');
         });
 
-        $("button.cancel-confirmation").on('click', function() {
-          $('#confirm-dialog').attr('class', 'fade-out');
+        $("button.cancel-confirmation").on('click', function () {
+            $('#confirm-dialog').attr('class', 'fade-out');
         });
     }
 };
