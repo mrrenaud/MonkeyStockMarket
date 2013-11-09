@@ -1,7 +1,7 @@
 {
   "name": "Monkey Stock Market ",
-  "description": "Application to follow the drinks & foods stocks in coworking space ! Eat Bananas !!!",
-  "launch_path": "/index.html",
+  "description": "Application to follow the drinks & foods stocks in coworking space! Eat Bananas!!!",
+  "launch_path": "/index-fa.html",
   "icons": {
     "128": "/img/logo.png"
   },
