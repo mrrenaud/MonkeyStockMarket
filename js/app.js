@@ -12,24 +12,37 @@
 //});
 
 
-(function () {
-    "use strict";
+var MonkeyStockMarket = {
 
-    $(".btn-user").on('click', function () {
-        //alert('test');
-        $('#miam-selection').attr('class', 'current');
-        $('[data-position="current"]').attr('class', 'left');
-    });
+    viewModel: null,
+
+    monkeyViewModel: function () {
+
+        var __this = this;
+
+        __this.user = ko.observable('Anonymous');
+    },
+
+    initializeViewModel: function () {
+        MonkeyStockMarket.viewModel = new MonkeyStockMarket.monkeyViewModel();
+    },
+
+    initializeNavigation: function () {
+        $(".btn-user").on('click', function () {
+            $('#miam-selection').attr('class', 'current');
+            $('[data-position="current"]').attr('class', 'left');
+            MonkeyStockMarket.viewModel.user($(this).attr('id'));
+
+        });
 
 
-    $(".btn-back").on('click', function () {
-        //alert('test');
-        $('section.current').attr('class', 'right');
-        $('[data-position="current"]').attr('class', 'current');
-    });
+        $(".btn-back").on('click', function () {
+            $('section.current').attr('class', 'right');
+            $('[data-position="current"]').attr('class', 'current');
+        });
+    }
+};
 
-
-
-
-})();
-
+MonkeyStockMarket.initializeNavigation();
+MonkeyStockMarket.initializeViewModel();
+ko.applyBindings(MonkeyStockMarket.viewModel);
