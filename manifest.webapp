@@ -9,5 +9,6 @@
     "name": "Creative Monkeys",
     "url": "http://www.creativemonkeys.eu"
   },
-  "default_locale": "en"
+  "default_locale": "en",
+  "origin": "app://monkeymarket.com"
 }
