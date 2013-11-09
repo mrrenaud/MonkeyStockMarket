@@ -32,7 +32,18 @@ var MonkeyStockMarket = {
         }
 
         __this.commandItem = function (item) {
-            
+            $.ajax('http://monkeystockmarket.azurewebsites.net/api/log', {
+                type: "POST",
+                data: JSON.stringify({
+                    userid: MonkeyStockMarket.viewModel.user.userid,
+                    itemid: item.itemid
+                })
+            }).then(function (result) {
+
+
+            }, function (error) {
+                alert(error);
+            });
         };
 
         __this.user = ko.observable(null);
@@ -50,20 +61,26 @@ var MonkeyStockMarket = {
              alert("error");
          });
 
-        __this.categories = [
-            {
-                title: "Boisson",
-                items: [
-                  { label: "Coca", price: 0.52 },
-                  { label: "Fanta", price: 0.52 }]
-            },
-            {
-                title: "Bouffe",
-                items: [
-                  { label: "Kinder", price: 0.52 },
-                  { label: "Mousse au chocolat", price: 0.52 },
-                  { label: "Magnum", price: 0.52 }]
-            }];
+        __this.categories = ko.observableArray([]);
+        __this.items = ko.observableArray([]);
+
+        $.ajax('http://monkeystockmarket.azurewebsites.net/api/item')
+             .then(function (json) {
+                 var result = JSON.parse(json);
+                 result.forEach(function (item) {
+                     __this.items.push(item);
+                     for (var i = 0 ; i < __this.categories().length; i++) {
+                         if (__this.categories()[i].title == item.category) {
+                             var category = __this.categories()[i];
+                             category.items.push(item);
+                             return false;
+                         }
+                     }
+                     __this.categories.push({ title: item.category, items: [item] });
+                 });
+             }, function (error) {
+                 alert("error");
+             });
     },
 
     initializeViewModel: function () {
