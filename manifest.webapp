@@ -1,13 +1,13 @@
 {
-  "name": "CreativeStockMarket",
-  "description": "bla bla bla",
+  "name": "Monkey Stock Market ",
+  "description": "Application to follow the drinks & foods stocks in coworking space ! Eat Bananas !!!",
   "launch_path": "/index.html",
   "icons": {
-    "128": "/img/icon-128.png"
+    "128": "/img/logo.png"
   },
   "developer": {
-    "name": "CreativeMonkey",
-    "url": "http://your-homepage-here.org"
+    "name": "Creative Monkeys",
+    "url": "http://www.creativemonkeys.eu"
   },
   "default_locale": "en"
 }
