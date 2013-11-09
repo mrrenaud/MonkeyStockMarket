@@ -261,23 +261,16 @@
 
     <article class="content scrollable header">
       <section data-type="list">
-        <header>Boissons</header>
-        <ul>
-          <li>
-            <p>Coca</p>
-            <p>0.52 €</p>
-          </li>
-          <li><p>Coca Zero</p></li>
-          <li><p>Fanta</p></li>
-          <li><p>Jupiler</p></li>
-        </ul>
 
-        <header>Miam</header>
-        <ul>
-          <li><p>Kinder</p></li>
-          <li><p>Mini Magnum</p></li>
-          <li><p>Dame blanche</p></li>
+
+      <div data-bind="foreach: categories">
+        <header data-bind="text: title"></header>
+        <ul data-bind="foreach: items">
+          <li>
+            <p data-bind="text: label"></p>
+            <p data-bind="text: price"></p>
         </ul>
+      </div>
 
       </section>
     </article>

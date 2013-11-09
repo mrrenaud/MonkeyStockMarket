@@ -21,6 +21,16 @@ var MonkeyStockMarket = {
         var __this = this;
 
         __this.user = ko.observable('Anonymous');
+        __this.categories = [
+            { title: "Boisson",
+              items: [
+                {label: "Coca", price: 0.52},
+                {label: "Fanta", price: 0.52}]},
+            { title: "Bouffe",
+              items: [
+                {label: "Kinder", price: 0.52},
+                {label: "Mousse au chocolat", price: 0.52},
+                {label: "Magnum", price: 0.52}]}];
     },
 
     initializeViewModel: function () {
