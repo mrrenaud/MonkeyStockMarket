@@ -16,7 +16,7 @@
     "use strict";
 
     $(".btn-user").on('click', function () {
-        alert('test');
+        //alert('test');
     });
 
 })();
