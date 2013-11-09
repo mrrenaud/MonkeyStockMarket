@@ -83,9 +83,3 @@ var MonkeyStockMarket = {
 MonkeyStockMarket.initializeNavigation();
 MonkeyStockMarket.initializeViewModel();
 ko.applyBindings(MonkeyStockMarket.viewModel);
-
-var successCallback = function(data) {
-  console.log(data);
-}
-
-$.getJSON("http://monkeystockmarket.azurewebsites.net/api/item", successCallback).fail(function(){ console.log("fail !")});
