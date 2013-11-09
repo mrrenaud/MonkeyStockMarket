@@ -11,10 +11,5 @@
     "url": "http://www.creativemonkeys.eu"
   },
   "default_locale": "en",
-  "origin": "app://monkeymarket.com",
-  "permissions": {
-    "systemXHR": {},
-    "network-http": {},
-    "network-tcp": {}
-  },
+  "origin": "app://monkeymarket.com"
 }

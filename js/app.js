@@ -69,7 +69,6 @@ var MonkeyStockMarket = {
             $('[data-position="current"]').attr('class', 'current');
         });
 
-
         $("button.confirm-confirmation").on('click', function() {
           console.log("T'es gros");
           $('#confirm-dialog').attr('class', 'fade-out');
@@ -84,10 +83,6 @@ var MonkeyStockMarket = {
 MonkeyStockMarket.initializeNavigation();
 MonkeyStockMarket.initializeViewModel();
 ko.applyBindings(MonkeyStockMarket.viewModel);
-
-$.ajaxSetup( {
-    xhr: function() {return new window.XMLHttpRequest({mozSystem: true});}
-});
 
 var successCallback = function(data) {
   console.log(data);
