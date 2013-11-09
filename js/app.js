@@ -17,7 +17,19 @@
 
     $(".btn-user").on('click', function () {
         //alert('test');
+        $('#miam-selection').attr('class', 'current');
+        $('[data-position="current"]').attr('class', 'left');
     });
+
+
+    $(".btn-back").on('click', function () {
+        //alert('test');
+        $('section.current').attr('class', 'right');
+        $('[data-position="current"]').attr('class', 'current');
+    });
+
+
+
 
 })();
 

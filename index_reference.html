@@ -245,41 +245,183 @@
                         </li>
                     </ul>
                 </div>
+                <!--<div data-type="list">
+                  <ul>
+                    <li>
+                      <a id="btn-action-menu" href="#">
+                        <p>Action menu</p>
+                      </a>
+                    </li>
+                    <li>
+                      <a id="btn-buttons" href="#">
+                        <p>Buttons</p>
+                      </a>
+                    </li>
+                    <li>
+                      <a id="btn-confirm" href="#">
+                        <p>Confirm</p>
+                      </a>
+                    </li>
+                    <li>
+                      <a id="btn-edit-mode" href="#">
+                        <p>Edit mode</p>
+                      </a>
+                    </li>
+                    <li>
+                      <a id="btn-headers" href="#">
+                        <p>Headers</p>
+                      </a>
+                    </li>
+                    <li>
+                      <a id="btn-input-areas" href="#">
+                        <p>Input areas</p>
+                      </a>
+                    </li>
+                    <li>
+                      <a id="btn-status" href="#">
+                        <p>Status</p>
+                      </a>
+                    </li>
+                    <li>
+                      <a id="btn-switches" href="#">
+                        <p>Switches</p>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#drawer">
+                        <p>Drawer</p>
+                      </a>
+                    </li>
+                    <li>
+                      <a id="btn-lists" href="#">
+                        <p>Lists</p>
+                      </a>
+                    </li>
+                    <li>
+                      <a id="btn-progress" href="#">
+                        <p>Progress and activity</p>
+                      </a>
+                    </li>
+                    <li>
+                      <a id="btn-scrolling" href="#">
+                        <p>Scrolling</p>
+                      </a>
+                    </li>
+                    <li>
+                      <a id="btn-seek-bars" href="#">
+                        <p>Seek bars</p>
+                      </a>
+                    </li>
+                    <li>
+                      <a id="btn-tabs" href="#">
+                        <p>Tabs</p>
+                      </a>
+                    </li>
+                    <li>
+                      <a id="btn-filters" href="#">
+                        <p>Filters</p>
+                      </a>
+                    </li>
+                    <li>
+                      <a id="btn-toolbars" href="#">
+                        <p>Toolbars</p>
+                      </a>
+                    </li>
+                  </ul>
+                </div>-->
             </article>
         </section> <!-- end drawer -->
     </section> <!-- end index -->
-
-    <!--···························· Monkey Miam ····························-->
-  <section role="region" id="miam-selection" data-position="right">
-    <header class="fixed">
-      <a  class="btn-back" href="#"><span class="icon icon-back">retour</span></a>
-      <h1>Vos Bananes !</h1>
-    </header>
-
-    <article class="content scrollable header">
-      <section data-type="list">
-        <header>Boissons</header>
-        <ul>
-          <li>
-            <p>Coca</p>
-            <p>0.52 €</p>
-          </li>
-          <li><p>Coca Zero</p></li>
-          <li><p>Fanta</p></li>
-          <li><p>Jupiler</p></li>
-        </ul>
-
-        <header>Miam</header>
-        <ul>
-          <li><p>Kinder</p></li>
-          <li><p>Mini Magnum</p></li>
-          <li><p>Dame blanche</p></li>
-        </ul>
-
-      </section>
-    </article>
-  </section>
-
+    <!--·························· Input areas ··························-->
+    <section role="region" id="input-areas" data-position="right">
+        <header class="fixed">
+            <a id="btn-input-areas-back" href="#"><span class="icon icon-back">back</span></a>
+            <h1>Input areas</h1>
+        </header>
+        <article class="content scrollable header">
+            <header><h2>Default inputs</h2></header>
+            <form>
+                <p>
+                    <input type="text" placeholder="Placeholder" required>
+                    <button type="reset">Clear</button>
+                </p>
+                <p>
+                    <textarea placeholder="Placeholder in textarea" required></textarea>
+                </p>
+                <p>
+                    <input type="text" placeholder="Placeholder" value="Some written text" required>
+                    <button type="reset">Clear</button>
+                </p>
+            </form>
+            <header><h2>Fieldset</h2></header>
+            <form>
+                <fieldset>
+                    <legend class="action">Mobile</legend>
+                    <section>
+                        <p>
+                            <input type="tel" placeholder="Phone number" required>
+                            <button type="reset">Clear</button>
+                        </p>
+                        <p>
+                            <input type="text" placeholder="Name" value="Jessy James" required>
+                            <button type="reset">Clear</button>
+                        </p>
+                    </section>
+                </fieldset>
+                <fieldset>
+                    <legend>Work</legend>
+                    <section>
+                        <p>
+                            <input type="tel" placeholder="Email" required>
+                            <button type="reset">Clear</button>
+                        </p>
+                    </section>
+                </fieldset>
+            </form>
+            <header><h2>Forms: Input text</h2></header>
+            <form role="search">
+                <p>
+                    <input type="text" placeholder="Search..." required>
+                    <button type="reset">Clear</button>
+                </p>
+            </form>
+            <form role="search">
+                <button type="submit">Cancel</button>
+                <p>
+                    <input type="text" placeholder="Search..." required value="Some text here">
+                    <button type="reset">Clear</button>
+                </p>
+            </form>
+            <form role="search" class="skin-dark">
+                <p>
+                    <input type="text" placeholder="Search..." required>
+                    <button type="reset">Clear</button>
+                </p>
+            </form>
+            <form role="search" class="skin-dark">
+                <button type="submit">Cancel</button>
+                <p>
+                    <input type="text" placeholder="Search..." required value="Some text here">
+                    <button type="reset">Clear</button>
+                </p>
+            </form>
+            <header><h2>Forms: Text area</h2></header>
+            <form role="search" class="bottom">
+                <!-- this button should be enabled after start typing in the input field-->
+                <button type="submit" disabled>Send</button>
+                <p>
+                    <textarea required></textarea>
+                </p>
+            </form>
+            <form role="search" class="bottom">
+                <button class="icon icon-attachment">Attachment</button>
+                <button type="submit">Send</button>
+                <p>
+                    <textarea required>Some text here</textarea>
+                </p>
+            </form>
+        </article>
+    </section>
 
     <script type="text/javascript" defer src="js/status.js"></script>
     <script type="text/javascript" defer src="js/seekbars.js"></script>
